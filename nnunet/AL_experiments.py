@@ -18,14 +18,14 @@ random.seed(RANDOM_SEED)
 # sampling_methods = ["random_sampling", "least_confidence_sampling"]
 # sampling_tasks = [115, 116]
 
-sampling_methods = ["least_confidence_sampling"]
-sampling_tasks = [116]
+sampling_methods = ["random_sampling"]
+sampling_tasks = [115]
 
-cluster = "lig"  # or "gcp"
+cluster = "gcp"  # or "gcp"
 
 # ---- PATHS ----
 if cluster == "gcp":
-    RAW_UNLABELLED_FOLDER = "../data/toothfairy/Dataset112_ToothFairy2/my_al_runs/run_toothFairy_grouped_classes_al_run"
+    RAW_UNLABELLED_FOLDER = "../data/Dataset112_ToothFairy2/my_al_runs/run_toothFairy_grouped_classes_al_run"
     NNUNET_RAW = "../data/nnUnet/nnUNet_raw"
     NNUNET_RESULTS = "../data/nnUnet/nnUNet_results"
     NNUNET_RESULTS_PROCESSED = "../data/nnUnet/nnUNet_resultsprocessed"
@@ -146,7 +146,6 @@ for sampling_name, sampling_number in zip(sampling_methods, sampling_tasks):
         # create the folder copy of unannotated images only for leat confidence which need to perform prediction on it
         tmp_unlabeled_dir = os.path.join(PATH_TO_DATA, "toothfairy/tmp")
         prepare_working_unlabeled_pool(os.path.join(RAW_UNLABELLED_FOLDER, "unlabeled_pool_images"), tmp_unlabeled_dir)
-        
 
     for iteration in range(AL_ROUNDS):
         print(f"--- Iteration {iteration} ---")
