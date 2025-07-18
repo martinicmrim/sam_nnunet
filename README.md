@@ -2,8 +2,8 @@
 Experiments on combination of SAM and nnU-net
 
 # TO DO 
-- Description MedSAM
-- Upload full code
+- Improve comments in code + Path configuration
+- Create script for automatic training / evaluation
 
 # Description
 The code is composed of two independant part due to incompatible requirements between nnU-net and MedSAM-3D.
